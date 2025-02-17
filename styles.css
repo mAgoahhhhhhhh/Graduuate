@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+.Information {
+    font-family: "Prompt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border: 2px solid #cccccc00; /* เส้นขอบ */
+    border-radius: 20px; /* ทำขอบมน */
+    padding: 20px; /* เพิ่มระยะห่างภายในกล่อง */
+    background-color: #FFFFFF; /* พื้นหลังกล่อง */
+    opacity: 0.7;
+
+  .name {
+    padding-top: 20px;
+    text-align: right; /* จัดข้อความไปทางขวา */
+    margin-right: 20px; /* เพิ่มระยะห่างจากขอบขวาของหน้า */
+  }
+}
+
+header {
+    background-color: #DDA853; /* สีพื้นหลัง */
+    padding: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: #DDB153;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 10px; /* เพิ่มระยะห่าง 10px */
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 6px;
+    background-color: white;
+    margin: 20px auto 0; /* ขีดเส้นใต้ห่างจากข้อความ 10px */
+    margin-bottom: 20px;
+}
+
+.HeaderContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.Header_logo {
+    height: 50px; /* ขนาดโลโก้ */
+    margin-right: 20px; /* ระยะห่างระหว่างโลโก้กับเส้น */
+}
+
+.vertical-line {
+    width: 5px;
+    height: 50px;
+    background-color: white;
+    margin-right: 20px; /* ระยะห่างระหว่างเส้นกับข้อความ */
+}
+
+.Header_text {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.Congratulations {
+    /* margin-bottom: 10%; */
+    text-align: center;
+    /* background-color: black;  */
+    height: 597px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding-bottom: 10px;
+  }
+
+  .swiper-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+
+
+  .CONGRATULATIONS {
+    margin-bottom: 50px; /* กำหนดระยะห่างระหว่าง h1 และข้อความถัดไป */
+  }
+
+  .Saysomething {
+    background-image: url(https://i.pinimg.com/736x/73/20/04/7320041c6db788af60a210599a2064e3.jpg);
+    text-align: center;
+    /* background-color: black; */
+    /* opacity: 0.9; */
+    height: auto;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10%;
+}
+
+.SAY_SOMETHING {
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.Form {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 100px;
+    align-items: center;
+    background-color: #EFB036;
+    padding: 30px;
+    border-radius: 20px;
+    width: 70%; /* ปรับให้แคบลงเล็กน้อย */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+}
+
+.photo_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.photo_head {
+    font-size: 28px; /* ขยายขนาดฟอนต์ */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.photo_box {
+    width: 450px;
+    height: 600px;
+    background-color: #3B6790;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo_input{
+    width: 90%;
+    height: 90%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute;
+    object-fit: cover;
+}
+
+.right_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input_group label {
+    font-weight: bold;
+    font-size: 20px; /* ขยายขนาดตัวหนังสือ */
+}
+
+.input_group input,
+.input_group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px; /* ขยายขนาดตัวอักษร */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacts h3 {
+    font-size: 22px; /* ขยายขนาดตัวหนังสือ */
+}
+
+.contact_item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact_item img {
+    width: 60px;
+    height: 60px;
+}
+
+footer {
+    background-color: #1F4A56;
+    color: white;
+    width: auto;
+    height: 100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.footer-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.submit{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}

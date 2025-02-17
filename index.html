@@ -153,6 +153,41 @@ async function fetchGitHubRepoData() {
 // เรียกฟังก์ชันเพื่อดึงข้อมูลจาก GitHub
 fetchGitHubRepoData();
 
+async function createGitHubIssue(name, message) {
+    const issueData = {
+        title: `Message from ${name}`,
+        body: message
+    };
+
+    const response = await fetch(`https://api.github.com/repos/${username}/${repo}/issues`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `token ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(issueData)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        console.log('Issue Created:', data);
+    } else {
+        console.log('Error creating issue');
+    }
+}
+
+// ใช้ฟังก์ชันนี้เมื่อผู้ใช้ส่งฟอร์ม
+const submitButton = document.querySelector('.submit');
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    
+    createGitHubIssue(name, message);
+});
+
+
     </script>
 </body>
 </html>

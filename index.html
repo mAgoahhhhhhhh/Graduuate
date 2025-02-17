@@ -130,34 +130,14 @@
         });
 
         const token = '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'; // ใส่ Personal Access Token ของคุณ
-const username = 'mAgoahhhhhhhh'; // ใส่ชื่อผู้ใช้ GitHub ของคุณ
-const repo = 'Graduuate'; // ใส่ชื่อ repository ที่ต้องการเข้าถึง
+        const username = 'mAgoahhhhhhhh'; // ใส่ชื่อผู้ใช้ GitHub ของคุณ
+        const repo = 'Graduuate'; // ใส่ชื่อ repository ที่ต้องการเข้าถึง
 
-async function fetchGitHubRepoData() {
-    const response = await fetch(`https://api.github.com/repos/${username}/${repo}`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json'
-        }
-    });
-
-    if (response.ok) {
-        const data = await response.json();
-        console.log('Repository Data:', data);
-    } else {
-        console.log('Error fetching repository data');
-    }
-}
-
-// เรียกฟังก์ชันเพื่อดึงข้อมูลจาก GitHub
-fetchGitHubRepoData();
-
-async function createGitHubIssue(name, message) {
-    const issueData = {
-        title: `Message from ${name}`,
-        body: message
-    };
+        async function createGitHubIssue(name, message) {
+            const issueData = {
+                title: `Message from ${name}`,
+                body: message
+            };
 
     const response = await fetch(`https://api.github.com/repos/${username}/${repo}/issues`, {
         method: 'POST',
@@ -165,25 +145,27 @@ async function createGitHubIssue(name, message) {
             'Authorization': `token ${token}`,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(issueData)
+        body: JSON.stringify(issueData) // ส่งข้อมูล issue เป็น JSON
     });
 
     if (response.ok) {
         const data = await response.json();
-        console.log('Issue Created:', data);
+        console.log('Issue Created:', data); // แสดงข้อมูล issue ที่สร้างใน console
     } else {
         console.log('Error creating issue');
     }
 }
 
-// ใช้ฟังก์ชันนี้เมื่อผู้ใช้ส่งฟอร์ม
+// ใช้ฟังก์ชันนี้เมื่อผู้ใช้กดปุ่ม submit ในฟอร์ม
 const submitButton = document.querySelector('.submit');
 submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault(); // หยุดการรีเฟรชหน้าเว็บ
+
+    // รับค่าจากฟอร์ม
+    const name = document.getElementById('name').value; // รับชื่อจาก input
+    const message = document.getElementById('message').value; // รับข้อความจาก textarea
     
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-    
+    // ส่งข้อมูลไปสร้าง issue ใน GitHub
     createGitHubIssue(name, message);
 });
 

@@ -166,11 +166,12 @@
                 photo: photoUrl
             };
         
-            const response = await fetch("https://script.google.com/macros/s/AKfycby6UCb5_zuLPNNgAt_fy1N_bgM2VuOkk51fesHSGS09aNGSbJU--Ot9EvJ21meG0URg/exec", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbwgffUO_cg8simqfNPL6v11kILxz0BvtOBKal645xs/dev", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(textData)
             });
+            
         
             if (response.ok) {
                 alert("ส่งข้อมูลสำเร็จ!");
